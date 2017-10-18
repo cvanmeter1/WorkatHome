@@ -14,21 +14,25 @@ public class Guess
       int numToGuess;       //Number the user tries to guess
       int guess;            //The user's guess
 
-	Scanner scan = new Scanner(System.in);
-	Random generator = new Random();
+    Scanner scan = new Scanner(System.in);
+    Random generator = new Random();
 
-	//randomly generate the  number to guess
-
-	//print message asking user to enter a guess
-
-	//read in guess
-                
-	while (  )  //keep going as long as the guess is wrong
+    //randomly generate the  number to guess
+    numToGuess = ((int)(Math.random() * 10)+1);
+    
+    //print message asking user to enter a guess
+    System.out.print("Guess a number between at 1 and 10:");
+    //read in guess
+    guess = scan.nextInt();
+    while (guess != numToGuess)  //keep going as long as the guess is wrong
         {
-	    //print message saying guess is wrong
-	    //get another guess from the user
-	}
-
-	//print message saying guess is right
+        //print message saying guess is wrong
+        System.out.println("Try Again!");
+        //get another guess from the user
+        System.out.println("Guess: ");
+        guess = scan.nextInt();
+    }
+    
+    //print message saying guess is right
     }
 }
