@@ -12,15 +12,17 @@ public class LoveCS
         Scanner kb = new Scanner(System.in);
         int limit;
         int count = 1;
-        
+        int times = 0;
+        int sum = 0;
         System.out.println("How many times do you want to print the statement?: ");
         limit = kb.nextInt();
         while (count <= limit){
             
             System.out.printf("%d I love Computer Science!!\n", count);
-            count ++;
-            
+            count++;
+            times++;
+            sum = sum + times;
         }
-        System.out.printf("Printed this message %d times.", count);
+        System.out.printf("Printed this message %d times. The sum of the numbers from 1 to %d is %d", times, times, sum);
     }
 }
