@@ -15,7 +15,7 @@ public class Guess
         int guess;            //The user's guess
         int tooHigh = 0;
         int tooLow = 0;
-        int totalGuesses = 0;
+        int totalGuesses = 1;
         Scanner scan = new Scanner(System.in);
         Random generator = new Random();
 
