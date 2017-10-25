@@ -21,7 +21,10 @@ public class Temps
         final int HOURS_PER_DAY = 24;
 
         int temp;   // a temperature reading
-
+        int maxTemp = -1000;
+        int timeOfMax = 0;
+        int minTemp = 1000;
+        int timeOfMin = 0;
         Scanner scan = new Scanner(System.in);
 
         // print program heading
@@ -31,11 +34,24 @@ public class Temps
 
         for (int hour = 0; hour < HOURS_PER_DAY; hour++)
         {
+            
             System.out.print ("Enter the temperature reading at " + hour +
                 " hours: ");
             temp = scan.nextInt();
+            if (temp > maxTemp)
+            {
+                maxTemp = temp;
+                timeOfMax = hour;
+            }
+            if (temp < minTemp)
+            {
+                minTemp = temp;
+                timeOfMin = hour;
+            }
         }
-
+        System.out.printf("The highest temperature so far was %d degrees at %d o'clock.", maxTemp,timeOfMax);
+        System.out.println();
+        System.out.printf("The lowest temp so far is was %d degreees at %d o'clock.", minTemp,timeOfMin);
         // Print the results
     }
 }
