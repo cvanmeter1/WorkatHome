@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=BandBooster
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ BandBooster\ here.\r\n\r\n\ @author\ (Christian\ VanMeter)\r\n\ @version\ (11/1/2017)\r\n
+comment1.params=n
+comment1.target=BandBooster(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=sold
+comment3.target=void\ updateSales(int)
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5
