@@ -12,12 +12,15 @@ public class BandBooster2
         Scanner kb = new Scanner(System.in);
         BandBooster student1 = new BandBooster("Joe");
         BandBooster student2 = new BandBooster("Sarah");
-        System.out.println("Enter the number of boxes sold by " + student1.getName() + " this week:");
-        student1.updateSales(kb.nextInt());
-        System.out.println();
-        System.out.println("Enter the number of boxes sold by " + student2.getName() + " this week:");
-        student2.updateSales(kb.nextInt());
-        System.out.println(student1);
-        System.out.println(student2);
+        for(int i = 1; i <= 3; i++)
+        {
+            System.out.println("Enter the number of boxes sold by " + student1.getName() + " this week:");
+            student1.updateSales(kb.nextInt());
+            System.out.println();
+            System.out.println("Enter the number of boxes sold by " + student2.getName() + " this week:");
+            student2.updateSales(kb.nextInt());
+            System.out.println(student1);
+            System.out.println(student2);
+        }
     }
 }
