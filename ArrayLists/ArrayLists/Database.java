@@ -48,7 +48,7 @@ public class Database
                 String search = kb.nextLine();
                 for(Contact c: contact)
                 {
-                    if(c.getFirst().equals(search) || c.getLast().equals(search) || c.getPhoneNum().equals(search) || c.getEMail().equals(search))
+                    if(c.getFirst().equalsIgnoreCase(search) || c.getLast().equalsIgnoreCase(search) || c.getPhoneNum().equalsIgnoreCase(search) || c.getEMail().equalsIgnoreCase(search))
                     {
                         System.out.println(c);
                     }
@@ -59,9 +59,9 @@ public class Database
             {
                 System.out.println("Who would you like to search for?");
                 String delete = kb.nextLine();
-                for(Contact c: contact)
+                for(Contact c: new ArrayList<>(contact))
                 {
-                    if(c.getFirst().equals(delete) || c.getLast().equals(delete) || c.getPhoneNum().equals(delete) || c.getEMail().equals(delete))
+                    if(c.getFirst().equalsIgnoreCase(delete) || c.getLast().equalsIgnoreCase(delete) || c.getPhoneNum().equalsIgnoreCase(delete) || c.getEMail().equalsIgnoreCase(delete))
                     {
                         System.out.println(c);
                         System.out.println("If you want to delete this contact enter (y/n): ");
@@ -77,6 +77,11 @@ public class Database
                         }
                     }
                 }
+            }
+            if(answer.equals("5"))
+            {
+                System.out.println("Program has been ended.");
+                continueContact = false;
             }
         }
         
