@@ -10,9 +10,9 @@ public class Contact
     
     private String first;
     private String last;
-    private int phoneNum;
+    private String phoneNum;
     private String eMail;
-    public Contact(String first, String last, int phoneNum, String eMail)
+    public Contact(String first, String last, String phoneNum, String eMail)
     {
         this.first = first;
         this.last = last;
@@ -27,13 +27,17 @@ public class Contact
     {
         return last;
     }
-    public int getPhoneNum()
+    public String getPhoneNum()
     {
         return phoneNum;
     }
-    public String eMail()
+    public String getEMail()
     {
         return eMail;
+    }
+    public String toString()
+    {
+        return "First Name: " + first + "\n Last Name: " + last + "\n Phone Number: " + phoneNum + "\n E-Mail: " + eMail;
     }
     
 }

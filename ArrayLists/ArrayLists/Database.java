@@ -28,12 +28,11 @@ public class Database
                 String tempFirst = kb.nextLine();
                 System.out.println("Enter last name: ");
                 String tempLast = kb.nextLine();
-                System.out.println("Enter phone number(no dashes and no spaces): ");
-                int tempPhoneNum = kb.nextInt();
+                System.out.println("Enter phone number: ");
+                String tempPhone = kb.nextLine();
                 System.out.println("Enter e-mail: ");
                 String tempEMail = kb.nextLine();
-                tempEMail = kb.nextLine();
-                contact.add(new Contact(tempFirst,tempLast,tempPhoneNum,tempEMail));
+                contact.add(new Contact(tempFirst,tempLast,tempPhone,tempEMail));
                 System.out.println("User added to database.");
             }
             if(answer.equals("2"))
@@ -41,6 +40,42 @@ public class Database
                 for(int i = 0; i < contact.size(); i++)
                 {
                     System.out.println(contact.get(i));
+                }
+            }
+            if(answer.equals("3"))
+            {
+                System.out.println("Who would you like to search for?");
+                String search = kb.nextLine();
+                for(Contact c: contact)
+                {
+                    if(c.getFirst().equals(search) || c.getLast().equals(search) || c.getPhoneNum().equals(search) || c.getEMail().equals(search))
+                    {
+                        System.out.println(c);
+                    }
+                }
+            
+            }
+            if(answer.equals("4"))
+            {
+                System.out.println("Who would you like to search for?");
+                String delete = kb.nextLine();
+                for(Contact c: contact)
+                {
+                    if(c.getFirst().equals(delete) || c.getLast().equals(delete) || c.getPhoneNum().equals(delete) || c.getEMail().equals(delete))
+                    {
+                        System.out.println(c);
+                        System.out.println("If you want to delete this contact enter (y/n): ");
+                        String decision = kb.nextLine();
+                        if(decision.equalsIgnoreCase("y"))
+                        {
+                            contact.remove(c);
+                            System.out.println("Contacted deleted from database.");
+                        }
+                        else
+                        {
+                            System.out.println("User not deleted.");
+                        }
+                    }
                 }
             }
         }
